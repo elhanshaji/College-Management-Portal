@@ -1,0 +1,20 @@
+﻿
+@model DataAccessLayer.Model.checkfeesmodel
+@{
+    ViewBag.Title = "Select";
+}
+
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+
+
+    @using (Html.BeginForm("Checkfee", "Admin", FormMethod.Post))
+    {
+
+        <table align="center">
+            <tr><td><span>Year </span></td><td>:</td><td>@Html.DropDownListFor(m => m.year, (SelectListItem[])ViewBag.Selectyear, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+
+            <tr><td><span>Semester </span></td><td>:</td><td>@Html.DropDownListFor(m => m.sem, (SelectListItem[])ViewBag.selectsem, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+           
+            <tr><td><span></span></td><td></td><td><input class="btn "  type="submit" value="Submit" id="sub" /></td></tr>
+        </table>
+    }

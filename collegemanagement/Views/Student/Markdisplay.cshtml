@@ -1,0 +1,62 @@
+﻿@model List<DataAccessLayer.Model.Markdetail>
+@{
+    ViewBag.Title = "Markdisplay";
+
+}
+<link rel="stylesheet" href="~/Content/displaystyle.css">
+<style type="text/css">
+    .l {
+   
+        top: 25%;
+        left: 40%;
+        width: 400px;
+        height: auto;
+        
+    }
+
+</style>
+<div class="l">
+    <div>
+
+
+    </div>
+
+    <table class="table  text-center  " align="center" style="">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Marks</th>
+
+            </tr>
+
+        </thead>
+        @foreach (var i in Model)
+        {
+
+            <tr scope="row">
+                <td class=" text-info">
+                    @i.SubName
+                </td>
+                @if (i.Mark < 50)
+                {
+                    <td class="text-danger ">
+                        @i.Mark
+                    </td>
+                }
+                @if (i.Mark >= 50)
+                {
+                    <td class="text-success">
+                        @i.Mark
+                    </td>
+                }
+
+
+
+            </tr>
+
+
+        }
+    </table>
+    <hr />
+
+</div>

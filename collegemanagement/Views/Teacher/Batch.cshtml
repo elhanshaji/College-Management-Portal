@@ -1,0 +1,29 @@
+﻿@model collegemanagement.Models.Marks
+    @if (Model.Batchs.Count() == 0)
+    {
+        <div style="text-align:center; width:70%;margin:auto; background-color:lightgreen;padding:20px; border-radius:5px;">
+            <span class=" text-danger">Student Marks already present for all semesters. If you need to alter the details communicate with Admin</span>
+        </div>
+       
+    }
+    @if (Model.Batchs.Count() != 0)
+    {
+        using (Ajax.BeginForm("AddMark", "Teacher", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "div2", InsertionMode = InsertionMode.Replace }))
+        {
+            <table>
+                <tr><td><span>Batch</span></td><td>:</td><td>@Html.DropDownListFor(m => m.batchid, Model.Batchs, new { @class = "btn btn-info", onchange = "clearr2()" })</td></tr>
+                <tr><td><input class="btn" type="submit" value="Submit" id="sub" /></td></tr>
+                <tr><td><input type="hidden" name="stdid" id="stdid" value='@ViewBag.stdid' /> </td></tr>
+            </table>
+
+        }
+        <script>
+            function clearr2() {
+                var id = document.getElementById("div2");
+                id.innerHTML = "";
+            }
+        </script>
+        <div id="div2">
+
+        </div>
+    }

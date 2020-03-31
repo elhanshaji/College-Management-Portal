@@ -1,0 +1,26 @@
+﻿@model collegemanagement.Models.Marks
+@{
+    ViewBag.Title = "MarkView";
+    
+}
+
+
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+
+
+
+    @using (Html.BeginForm("Markdisplay", "Teacher", FormMethod.Post))
+    {
+
+        <table  align="center">
+            <tr><td><span>Student Name </span></td><td>:</td><td>@Html.DropDownListFor(m => m.stdid, Model.Students, new { @class = "btn  btn-info",reqiured="required" })</td></tr>
+
+            <tr><td><span>Year </span></td><td>:</td><td>@Html.DropDownListFor(m => m.year, (SelectListItem[])ViewBag.Yearlist, new { @class = "btn  btn-info",reqiured = "required" })</td></tr>
+            <tr><td><span>Sem </span></td><td>:</td><td>@Html.DropDownListFor(m => m.sem, (SelectListItem[])ViewBag.SemList, new { @class = "btn btn-info", reqiured = "required" })</td></tr>
+
+
+            <tr><td><span></span></td><td></td><td><input class="btn " data-toggle="modal" data-target=".boot" type="submit"  value="Submit" id="sub" /></td></tr>
+        </table>
+
+    }
+

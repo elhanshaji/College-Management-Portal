@@ -1,0 +1,17 @@
+﻿@model DataAccessLayer.Model.SendNotificationmodel
+@{
+    ViewBag.Title = "SendNotifications";
+}
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+@using (Html.BeginForm("SendNotifications", "HOD", FormMethod.Post))
+{
+
+    <table align="center">
+        <tr><td><span>To</span></td><td>:</td><td>@Html.DropDownListFor(m => m.ToRoleID, (SelectListItem[])ViewBag.ListRole, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+        <tr><td><span>Message </span></td><td>:</td><td>@Html.TextAreaFor(m => m.Message, new { @class = "form-control" })@Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })</td></tr>
+        <tr><td><span></span></td><td></td><td><input class="btn " type="submit" value="Submit" id="sub" /></td></tr>
+        <tr><td colspan="3" align="center"><span class=" text-info">@ViewBag.msg</span></td></tr>
+    </table>
+
+
+}

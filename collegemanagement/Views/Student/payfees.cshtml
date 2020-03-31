@@ -1,0 +1,41 @@
+﻿@model List<DataAccessLayer.Model.Feesmodel>
+
+
+<link rel="stylesheet" href="~/Content/displaystyle.css">
+<div class="l">
+    @if (Model.Count() == 0)
+    {
+        <div style="text-align:center;margin:auto; background-color:lightgreen;padding:20px; border-radius:5px;">
+            <span class=" text-danger">No fee defaulter exist to this batch/Data not available for this Batch</span>
+        </div>
+
+    }
+
+    @if (Model.Count() != 0)
+    {
+        <table class="table  text-center  " align="center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Amount to be paid</th>
+                    <th>Online Payment</th>
+                    
+                </tr>
+            </thead>
+            @foreach (var a in Model)
+            {
+                <tr scope="row">
+                    <td>@a.year</td>
+                    <td>@a.sem</td>
+                    <td class="text-danger">50,000</td>
+                    <td ><a class="btn btn-info" href="/Student/Feespayment?SDID=@a.SDID"><span class="glyphicon glyphicon-ok-circle"></span>Pay Fees</a></td>
+                </tr>
+            }
+        </table>
+
+        <hr />
+    }
+
+
+</div>

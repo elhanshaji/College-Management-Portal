@@ -1,0 +1,25 @@
+﻿@model collegemanagement.Models.Marks
+@{
+    ViewBag.Title = "MarkAddition";
+}
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using (Ajax.BeginForm("Batch", "Teacher", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divEmp" ,InsertionMode= InsertionMode.Replace }))
+{
+    <table align="center">
+        <tr><td><span>Student Name </span></td><td>:</td><td>@Html.DropDownListFor(m => m.stdid, Model.Students, new { @class="btn btn-info", onchange="clearr()" })</td></tr>
+        <tr><td><input class="btn" type="submit" value="Submit" id="sub" /></td></tr>
+    </table>
+
+}
+<script>
+    function clearr() {
+        var id = document.getElementById("divEmp");
+        id.innerHTML = "";
+    }
+</script>
+<div id="divEmp">
+
+</div>

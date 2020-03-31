@@ -1,0 +1,181 @@
+﻿@model DataAccessLayer.Model.LogerinfoModel
+@{
+    ViewBag.Title = "Dashboard";
+}
+<link rel="stylesheet" href="~/Content/dashboardstyle.css">
+
+
+<div id="info">
+    <div id="image">
+
+        <img src="@Model.image" />
+
+    </div>
+   <table>
+       <tr>
+           <td>
+               Name: @Model.Name.ToUpper()
+           </td>
+           <td>
+               Age: @Model.age
+           </td>
+           </tr>
+       <tr>
+           <td>
+               Role: @Model.Role
+           </td>
+           <td>
+               Gender: @Model.gender
+           </td>
+       </tr>
+   </table>
+</div>
+<br />
+
+<div class="card-deck justify-content-center" style="margin-top:150px;">
+    @if (Model.Role == "Management")
+    {
+     
+            <div class="card bg-info col-md-2">
+                <a href="/Admin/AdmissionOfStudent" >
+                    <div class="card-body text-center">
+                        <h5 class="card-text">New Student </h5>
+                        <hr />
+                        <p>Enbales To Add New Student To the college to a specific batch </p>
+                    </div>
+                </a>
+                
+            </div>
+   
+        
+            <div class="card bg-warning col-md-2">
+                <a href="/Admin/AdmissionOfTeacher">
+                    <div class="card-body text-center">
+                        <h5 class="card-text">Add new Teacher</h5>
+                        <hr />
+                        <p>Hiering a professor/teacher to a college to a specific department</p>
+                    </div>
+                    </a>
+            </div>
+
+            <div class="card bg-success col-md-2">
+                <a href="/Admin/Select">
+                    <div class="card-body text-center">
+                        <h5 class="card-text">Fees Defaulters</h5>
+                        <hr />
+                        <p>View the number of students who had not paid fees for a particular semester</p>
+                    </div>
+                    </a>
+             </div>
+           
+                <div class="card bg-info col-md-2">
+                    <a href="/Admin/SendNotifications">
+                        <div class="card-body text-center">
+                            <h5 class="card-text">Send Notification</h5>
+                            <hr />
+                            <p>Send notification to the HOD ,staff members and students under certain circumstances</p>
+                        </div>
+                        </a>
+                  </div>
+            
+                }
+
+                @if (Model.Role == "HOD")
+                {
+                    <div class="card bg-danger col-md-2">
+                        <a href="/Teacher/MarkView">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Student Marks</h5>
+                                <hr />
+                                <p>View particular student marks of each and every semester </p>
+                            </div>
+                            </a>
+                     </div>
+
+
+                    <div class="card bg-info col-md-2">
+                        <a href="/HOD/SendNotifications">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Send Notification</h5>
+                                <hr />
+                                <p>Send notification to notification for the staff members and students under certain circumstances</p>
+                            </div>
+                        </a>
+                        </div>
+                    <div class="card bg-warning col-md-2">
+                        <a href="/HOD/ViewNotifications">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">View Notifications</h5>
+                                <hr />
+                                <p>View the notifications send by the Management to Hod and Staff members </p>
+                            </div>
+                            </a>
+                     </div>
+                }
+                @if (Model.Role == "Teacher")
+                {
+                    <div class="card bg-danger col-md-2">
+                        <a href="/Teacher/MarkView">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Student Marks</h5>
+                                <hr />
+                                <p>View particular student marks of each and every semester</p>
+                            </div>
+                            </a>
+                     </div>
+
+
+                    <div class="card bg-info col-md-2">
+                        <a href="/Teacher/MarkAddition">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Add Marks</h5>
+                                <hr />
+                                <p>Add marks to the students of particular year and semester </p>
+                            </div>
+                            </a>
+                     </div>
+                    <div class="card bg-warning col-md-2">
+                        <a href="/HOD/ViewNotifications">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">View Notifications</h5>
+                                <hr />
+                                <p>View the notifications send by Management and Hod to the Staff members</p>
+                            </div>
+                            </a>
+                   </div>
+                }
+                @if (Model.Role == "Student")
+                {
+                    <div class="card bg-danger col-md-2">
+                        <a href="/Student/ViewMark">
+                            <div class="card-body text-center">
+                                <h5 class="card-text"> Marks</h5>
+                                <hr />
+                                <p>View Marks scored in each and every sem</p>
+                            </div>
+                            </a>
+                    </div>
+
+
+                    <div class="card bg-info col-md-2">
+                        <a href="/HOD/ViewNotifications">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Notifications</h5>
+                                <hr />
+                                <p>View the notifications send by Management and Hod to the Students</p>
+                            </div>
+                             </a >
+                         </div>
+                    <div class="card bg-warning col-md-2">
+                        <a href="/Student/payfees">
+                            <div class="card-body text-center">
+                                <h5 class="card-text">Fee Details </h5>
+                                <hr />
+                                <p>Know the fee that you have to pay to your college for a particular sem and pay it through online</p>
+                            </div>
+                            </a>
+                      </div>
+                }
+
+
+</div>

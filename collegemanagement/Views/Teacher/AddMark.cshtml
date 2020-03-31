@@ -1,0 +1,37 @@
+﻿@model List<DataAccessLayer.Model.Markdetail>
+@{
+    ViewBag.Title = "Markdisplay";
+}
+@using (Html.BeginForm("AddMark", "Teacher", FormMethod.Post))
+{
+    <table class="table text-center table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Marks</th>
+
+            </tr>
+        </thead>
+        @foreach (var i in Model)
+        {
+
+            <tr scope="row">
+                <td>
+                    @i.SubName
+                </td>
+                <td>
+                    @Html.TextBox("sub_" + i.Subid, null, new { Type = "number", min = "0", max = "100", required = "required" })
+
+                </td>
+
+            </tr>
+
+
+        }
+
+        <tr><td><input class="btn" type="submit" value="Submit" id="sub" /></td></tr>
+    </table>
+    <input type="hidden" id="hidBatch" name="hidBatch" value="@ViewBag.BatchID" />
+    <input type="hidden" id="hidStd" name="hidStd" value="@ViewBag.StdID" />
+
+}

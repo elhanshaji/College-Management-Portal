@@ -1,0 +1,31 @@
+﻿@model DataAccessLayer.Model.AdmissionOfStudentmodel
+@{
+    ViewBag.Title = "AdmissionOfStudent";
+    
+}
+
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+
+
+
+@using (Html.BeginForm("AdmissionOfStudent", "Admin", FormMethod.Post))
+{
+
+    <table align="center">
+        <tr><td><span>Student Name </span></td><td>:</td><td>@Html.TextBoxFor(m => m.studentname,new { @class = "form-control" })@Html.ValidationMessageFor(model => model.studentname, "", new { @class = "text-danger" })</td></tr>
+        
+        <tr><td><span>Password </span></td><td>:</td><td>@Html.TextBoxFor(m => m.password, new { Type = "password", @class = "form-control" }) @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })</td></tr>
+       
+        <tr><td><span>Confirm Password </span></td><td>:</td><td>@Html.TextBoxFor(m => m.confirmpassword, new { Type = "password", @class = "form-control" }) @Html.ValidationMessageFor(model => model.confirmpassword, "", new { @class = "text-danger" })</td></tr>
+       
+        <tr><td><span>Department </span></td><td>:</td><td>@Html.DropDownListFor(m => m.depname, (SelectListItem[])ViewBag.branches, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+        <tr><td><span>Gender</span></td><td>:</td><td>@Html.RadioButtonFor(m => m.gender, "Male", new { @checked = true })Male @Html.RadioButtonFor(m => m.gender, "Female")Female</td></tr>
+        <tr><td><span>Age</span></td><td>:</td><td>@Html.TextBoxFor(m => m.age, new { Type="number", @class = "form-control" }) @Html.ValidationMessageFor(model => model.age, "", new { @class = "text-danger" })</td></tr>
+       
+
+        <tr><td><span></span></td><td></td><td><input class="btn " type="submit" value="Submit" id="sub" /></td></tr>
+        <tr><td colspan="3" align="center"><span class=" text-info">@ViewBag.msg</span></td></tr>
+    </table>
+    
+
+}

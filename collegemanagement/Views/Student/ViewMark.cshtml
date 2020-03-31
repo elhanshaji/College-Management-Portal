@@ -1,0 +1,21 @@
+﻿@model collegemanagement.Models.Marks
+@{
+    ViewBag.Title = "MarkView";
+}
+<link rel="stylesheet" href="~/Content/studentstyle.css">
+
+
+
+    @using (Html.BeginForm("Markdisplay", "Student", FormMethod.Post))
+    {
+        <table align="center" cellpadding="20">
+
+            <tr><td><span>Year </span></td><td>:</td><td>@Html.DropDownListFor(m => m.year, (SelectListItem[])ViewBag.Yearlist, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+            <tr><td><span>Sem </span></td><td>:</td><td>@Html.DropDownListFor(m => m.sem, (SelectListItem[])ViewBag.SemList, new { @class = "btn  btn-info", reqiured = "required" })</td></tr>
+
+
+            <tr><td><input type="submit" value="Submit" id="sub" /></td></tr>
+        </table>
+
+    }
+

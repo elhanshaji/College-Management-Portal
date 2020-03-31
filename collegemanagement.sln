@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.960
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "collegemanagement", "collegemanagement\collegemanagement.csproj", "{2E67371F-E9BD-4512-A1AE-FC9EE305B0A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{AC03A95B-106C-4485-A32F-DC5D317DB821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "collegemanagement", "collegemanagement\collegemanagement.csproj", "{C7A15D72-2546-4C6A-8CC2-E45FAAF410D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E67371F-E9BD-4512-A1AE-FC9EE305B0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E67371F-E9BD-4512-A1AE-FC9EE305B0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E67371F-E9BD-4512-A1AE-FC9EE305B0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E67371F-E9BD-4512-A1AE-FC9EE305B0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC03A95B-106C-4485-A32F-DC5D317DB821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC03A95B-106C-4485-A32F-DC5D317DB821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC03A95B-106C-4485-A32F-DC5D317DB821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC03A95B-106C-4485-A32F-DC5D317DB821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A15D72-2546-4C6A-8CC2-E45FAAF410D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A15D72-2546-4C6A-8CC2-E45FAAF410D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A15D72-2546-4C6A-8CC2-E45FAAF410D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A15D72-2546-4C6A-8CC2-E45FAAF410D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
